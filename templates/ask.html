@@ -1,0 +1,147 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ask! Me</title>
+
+	<link href="../static/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="../static/css/style.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  	<div class="container">
+    	<a class="navbar-brand d-flex align-items-center" href="#">
+				<div class="logo flex-shrink-0">
+					<img src="../static/img/logo2.png" alt="Logo">
+				</div>
+				<div class="flex-grow-1 ms-3">
+					Ask! Me
+				</div>
+			</a>
+			<form class="d-flex flex-row offset-lg-2" role="search">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-primary" type="submit">Search</button>
+			</form>
+    	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav align-items-center ms-auto">
+					<li class="nav-item me-5">
+						<a href="ask.html" class="btn btn-primary" role="button">Ask!</a>
+					</li>
+					<li class="nav-item">
+						<div class="row">
+							<div class="col-4">
+								<a class="nav-link" href="#">
+									<div class="profile flex-shrink-0">
+										<img src="../static/img/profile.jpg" alt="Profile">
+									</div>
+								</a>
+							</div>
+							<div class="col-8">
+								<a href="#" class="nav-link text-white">
+									KittieCat
+								</a>
+								<ul class="navbar-nav justify-content-between">
+									<li class="nav-item">
+										<a href="#" class="nav-link text-decoration-underline text-white">
+											settings
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link text-decoration-underline text-white">
+											log out
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+    </div>
+  	</div>
+	</nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0 background">
+
+	<div class="container mt-5">
+
+		<div class="row d-flex flex-row mb-5">
+			<div class="col-9 me-auto">
+				<div class="d-flex flex-row align-items-center justify-content-start">
+					<h1 class="mb-5">New question</h1>
+				</div>
+				<form class="row g-3 question-new">
+          <div class="col-12 mb-3 text-danger">Incorrect login or password!</div>
+          <div class="col-12 d-flex flex-row justify-content-between">
+            <label for="inputTitle" class="form-label">Title</label>
+						<input type="text" class="form-control" id="inputTitle" required>
+          </div>
+          <div class="col-12 d-flex flex-row justify-content-between">
+            <label for="inputText" class="form-label">Text</label>
+            <textarea class="form-control" id="inputText" rows="8" required></textarea>
+          </div>
+					<div class="col-12 d-flex flex-row justify-content-between">
+            <label for="inputTags" class="form-label">Tags</label>
+						<input type="text" class="form-control" id="inputTags" required>
+          </div>
+					<div class="col-3"></div>
+          <div class="col-9">
+            <button type="submit" class="btn btn-primary">Ask!</button>
+          </div>
+        </form>
+			</div>
+			<div class="col-3">
+				<div class="tags" style="margin-bottom: 20px;">
+					<h2 class="tags-title">Popular Tags</h2>
+					<div class="d-flex flex-wrap tags-text align-content-start justify-content-start" style="width: 300px;">
+						<div class="tags-text-popular-5 mb-auto p-3">MySQL</div>
+						<div class="tags-text-popular-4 mb-auto p-2">Data</div>
+						<div class="tags-text-popular-2 mb-auto p-1">Go</div>
+						<div class="tags-text-popular-3 mb-auto p-3">C++</div>
+						<div class="tags-text-popular-1 mb-auto p-1">Django</div>
+						<div class="tags-text-popular-5 mb-auto p-3">python</div>
+					</div>
+				</div>
+				<div class="members">
+					<h2 class="members-title">Best Members</h2>
+					<div class="members-list">
+						<ul style="list-style: none;">
+							<li><a href="#">goNshik</a></li>
+							<li><a href="#">kotik_KOTIK</a></li>
+							<li><a href="#">lameBane</a></li>
+							<li><a href="#">421412edq</a></li>
+							<li><a href="#">user_1231</a></li>
+							<li><a href="#">nickname111</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+
+<footer class="footer mt-auto py-3 bg-dark">
+	<div class="container">
+		<span class="text-muted">(=^ ◡ ^=)</span>
+	</div>
+</footer>
+
+
+<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+
+
+</body>
+</html>

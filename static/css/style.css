@@ -1,0 +1,239 @@
+@font-face {
+    font-family: 'Apercu Mono Pro';
+    src: local('Apercu Mono Pro Bold'), local('Apercu-Mono-Pro-Bold'),
+        url('../fonts/ApercuMonoPro-Bold.woff2') format('woff2'),
+        url('../fonts/ApercuMonoPro-Bold.woff') format('woff'),
+        url('../fonts/ApercuMonoPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Apercu Mono Pro';
+    src: local('Apercu Mono Pro Light'), local('Apercu-Mono-Pro-Light'),
+        url('../fonts/ApercuMonoPro-Light.woff2') format('woff2'),
+        url('../fonts/ApercuMonoPro-Light.woff') format('woff'),
+        url('../fonts/ApercuMonoPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Apercu Mono Pro';
+    src: local('Apercu Mono Pro Regular'), local('Apercu-Mono-Pro-Regular'),
+        url('../fonts/ApercuMonoPro-Regular.woff2') format('woff2'),
+        url('../fonts/ApercuMonoPro-Regular.woff') format('woff'),
+        url('../fonts/ApercuMonoPro-Regular.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+html * {
+    font-family: "Apercu Mono Pro", sans-serif !important;
+}
+
+.main container {
+    padding: 40px 15px 0;
+
+}
+
+.question {
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align:justify;
+    background: #E5E5E5AA;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border: 2px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+    background: white;
+}
+
+.logo img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border: 2px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #0d6efd;
+    overflow: hidden;
+}
+
+
+
+.profile img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.page-link {
+    background: #343a40;
+    color: white;
+}
+
+.rating {
+    background: #0d6efd;
+    color: white;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+.mark {
+    background: #198754;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-top: 40px;
+}
+.background {
+    background-image: url("https://assets.website-files.com/61f92416e329c682b9963552/61f92c7787c36138759c741c_Dotted-bg.svg");
+}
+
+.navbar {
+    height: 6em;
+}
+
+.tags {
+    justify-content: space-between;
+}
+
+.tags-title {
+     margin-bottom: 20px;
+}
+
+.tags-text-popular-5 {
+    font-size: 1.8rem;
+    font-weight: 580;
+    color: red;
+}
+
+.tags-text-popular-4 {
+    font-size: 1.6rem;
+    font-weight: 560;
+    color: orange;
+}
+
+.tags-text-popular-3 {
+    font-size: 1.4rem;
+    font-weight: 540;
+    color: green;
+}
+
+.tags-text-popular-2 {
+    font-size: 1.2rem;
+    font-weight: 520;
+}
+
+.tags-text-popular-1 {
+    color: grey;
+}
+
+.members-title {
+    margin-bottom: 20px;
+}
+
+.members-list li {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.question-answered {
+
+}
+
+.answer {
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align:justify;
+    background: #E5E5E5AA;
+}
+
+.reply {
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align:justify;
+    background: #E5E5E5AA;
+}
+.breakline {
+    border: 4px solid gray;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.question-new {
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align:justify;
+    background: #E5E5E5AA;
+}
+
+.settings {
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align:justify;
+    background: #E5E5E5AA;
+}
+.login {
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align:justify;
+    background: #E5E5E5AA;
+}
+
+.register {
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align:justify;
+    background: #E5E5E5AA;
+}
+
+.form-label {
+    width: 300px;
+}
