@@ -32,7 +32,6 @@ html * {
 
 .main container {
     padding: 40px 15px 0;
-
 }
 
 .question {
@@ -104,15 +103,16 @@ html * {
     border-radius: 6px;
     font-size: 1.3rem;
     font-weight: 600;
-    padding-top: 40px;
 }
 
 .mark {
     background: #198754;
+    color: white;
+    border-radius: 6px;
     font-size: 1.3rem;
     font-weight: 600;
-    padding-top: 40px;
 }
+
 .background {
     background-image: url("https://assets.website-files.com/61f92416e329c682b9963552/61f92c7787c36138759c741c_Dotted-bg.svg");
 }

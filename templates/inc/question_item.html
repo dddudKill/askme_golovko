@@ -1,0 +1,37 @@
+{% load static %}
+
+<div class="question">
+      <div class="row">
+        <div class="col-2 align-content-center">
+          <div class="avatar">
+            <img src="{% static "img/avatar1.jpg" %}" alt=""/>
+          </div>
+        </div>
+        <div class="col-9">
+          <h2 class="question-title">
+            <a href="{% url 'question' question_id=question.id %}">{{ question.title}}</a>
+          </h2>
+          <p class="mb-5">
+            {{ question.text }}
+          </p>
+          <div class="row">
+            <div class="col-4">
+              <a style="text-decoration:underline" href="{% url 'question' question_id=question.id %}">Answers ({{ question.answers_number }})</a>
+            </div>
+            <div class="col-8">
+              <p>
+                Tags:
+                {% for tag in question.tags %}
+                  <a style="text-decoration:underline" href="{% url 'tag' 2 %}">{{ tag }}</a>
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 rating text-center pt-3">
+          <button class="btn btn-success border border-white" type="submit">+</button>
+          <p>{{ question.rating }}</p>
+          <button class="btn btn-danger border border-white" type="submit">-</button>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,26 @@
+{% load static %}
+
+<div class="answer">
+  <div class="row"  style="min-height: 160px;">
+    <div class="col-2 align-content-center">
+      <div class="avatar">
+        <img src="{% static "img/avatar3.jpg" %}" alt=""/>
+      </div>
+    </div>
+    <div class="col-8">
+      <p class="mb-5">
+        {{ answer.text }}
+      </p>
+    </div>
+    <div class="col-1 rating text-center pt-3">
+      <button class="btn btn-success border border-white" type="submit">+</button>
+      <p>{{ answer.rating }}</p>
+      <button class="btn btn-danger border border-white" type="submit">-</button>
+    </div>
+    <div class="col-1 mark ps-4 pt-5">
+      <div class="form-check">
+        <input class="form-check-input border border-white" type="checkbox" value="">
+      </div>
+    </div>
+  </div>
+</div>

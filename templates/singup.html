@@ -6,9 +6,10 @@
 
   <div class="col-6 me-auto">
 				<div class="d-flex flex-row align-items-center justify-content-start">
-					<h1 class="mb-5">Settings: KittieCat</h1>
+					<h1 class="mb-5">Registration</h1>
 				</div>
-        <form class="row g-3 settings">
+        <form class="row g-3 register">
+          <div class="col-12 mb-3 text-danger">Incorrect login or password!</div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputLogin" class="form-label">Login</label>
             <input type="text" class="form-control" id="inputLogin" value="KittieCat">
@@ -20,6 +21,14 @@
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputNickname" class="form-label">Nickname</label>
             <input type="text" class="form-control" id="inputNickname" value="KittieCat">
+          </div>
+          <div class="col-12 d-flex flex-row justify-content-between">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword">
+          </div>
+          <div class="col-12 d-flex flex-row justify-content-between">
+            <label for="inputPasswordRepeat" class="form-label">Repeat Password</label>
+            <input type="password" class="form-control" id="inputPasswordRepeat">
           </div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputAvatar" class="form-label">Avatar</label>
@@ -34,10 +43,11 @@
           </div>
 					<div class="col-4"></div>
           <div class="col-8">
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Register</button>
           </div>
         </form>
 			</div>
   <div class="col-3"></div>
 
-{% endblock %}
+{%  endblock %}
+
