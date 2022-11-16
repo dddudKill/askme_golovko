@@ -4,7 +4,7 @@
 
 {% block content %}
 
-  <div class="col-8">
+  <div class="col-9">
     {% include './inc/question_item.html' %}
     <div class="breakline"></div>
     {% for answer in answers %}
@@ -25,6 +25,7 @@
     </div>
   {% include './inc/paginator.html' %}
   </div>
-  <div class="col-1"></div>
+
+  {% include './inc/sidebar.html' %}
 
 {% endblock %}

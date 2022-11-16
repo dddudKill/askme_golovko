@@ -82,8 +82,6 @@ html * {
     overflow: hidden;
 }
 
-
-
 .profile img {
     max-width: 100%;
     width: 100%;
@@ -190,6 +188,7 @@ html * {
 }
 .breakline {
     border: 4px solid gray;
+    background: gray;
     border-radius: 4px;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -236,4 +235,11 @@ html * {
 
 .form-label {
     width: 300px;
+}
+
+.block-with-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }

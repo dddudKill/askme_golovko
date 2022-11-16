@@ -1,34 +1,39 @@
-from tkinter import Entry
-
-from django.http import HttpResponse
 from django.shortcuts import render
 
-from . import models, util
+from . import util
+from .models import Question, Answer, Profile, Tag
 
 
 def index(request):
-    questions = models.QUESTIONS
-    context = util.paginate(request, questions)
+    questions = Question.objects.get_new_questions()
+    context = {'questions': util.paginate(request, questions)}
     return render(request, 'index.html', context=context)
 
 
 def question(request, question_id: int):
-    question_item = models.QUESTIONS[question_id]
-    context = {'question': question_item, 'answers': models.ANSWERS}
+    question_item = Question.objects.get_question(question_id)
+    context = {'question': question_item, 'answers': Answer.objects.filter(question=question_id)}
     return render(request, 'question.html', context=context)
 
 
 def hot(request):
-    questions = sorted(models.QUESTIONS, key=lambda i: i['rating'], reverse=True)
-    context = util.paginate(request, questions)
+    questions = Question.objects.get_hot_questions()
+    context = {'questions': util.paginate(request, questions)}
     return render(request, 'hot.html', context=context)
 
 
-def tag(request, question_id: int,  tag_id: int):
-    tag_item = models.QUESTIONS[question_id].tags[tag_id]
-    context = {'tag': tag_item, 'questions': models.QUESTIONS}
-    #return render(request, 'tag.html', context=context)
-    return HttpResponse("id %s" % models.QUESTIONS[question_id].tags[tag_id])
+def tag(request, tag_id: int):
+    tag_item = Tag.objects.get_tag(tag_id)
+    questions = util.paginate(request, tag_item.questions.all())
+    context = {'tag': tag_item, 'questions': questions}
+    return render(request, 'tag.html', context=context)
+
+
+def profile(request, profile_nickname: str):
+    profile_item = Profile.objects.get_profile(profile_nickname)
+    questions = util.paginate(request, profile_item.questions.all())
+    context = {'profile': profile_item, 'questions': questions}
+    return render(request, 'profile.html', context=context)
 
 
 def login(request):
@@ -37,6 +42,12 @@ def login(request):
 
 def singup(request):
     return render(request, 'singup.html')
+
+
+def settings(request):
+    profile_item = Profile.objects.get_profile('root')
+    context = {'profile': profile_item}
+    return render(request, 'settings.html', context)
 
 
 def ask(request):

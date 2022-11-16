@@ -6,27 +6,27 @@
 
   <div class="col-6 me-auto">
 				<div class="d-flex flex-row align-items-center justify-content-start">
-					<h1 class="mb-5">Settings: KittieCat</h1>
+					<h1 class="mb-5">Settings: {{ profile.nickname }}</h1>
 				</div>
         <form class="row g-3 settings">
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputLogin" class="form-label">Login</label>
-            <input type="text" class="form-control" id="inputLogin" value="KittieCat">
+            <input type="text" class="form-control" id="inputLogin" value="{{ profile.user.username }}">
           </div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail" value="kittieCat0231@gmail.com">
+            <input type="email" class="form-control" id="inputEmail" value="{{ profile.user.email }}">
           </div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputNickname" class="form-label">Nickname</label>
-            <input type="text" class="form-control" id="inputNickname" value="KittieCat">
+            <input type="text" class="form-control" id="inputNickname" value="{{ profile.nickname }}">
           </div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputAvatar" class="form-label">Avatar</label>
             <div class="input-group mb-3">
               <span class="input-group">
                 <div class="profile flex-shrink-0 mb-3">
-                  <img src="../static/img/profile.jpg" alt="Profile">
+                  <img src="{{ profile.avatar.url }}" alt="{{ profile.nickname }}">
                 </div>
               </span>
              <input type="file" class="form-control" id="inputAvatar">

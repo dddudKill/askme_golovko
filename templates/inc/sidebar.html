@@ -1,0 +1,20 @@
+<div class="col-3">
+  <div class="tags" style="margin-bottom: 20px;">
+    <h2 class="tags-title">Popular Tags</h2>
+    <div class="d-flex flex-wrap align-content-start justify-content-start" style="width: 300px;">
+      {% for tag in tags %}
+        <a href="{% url 'tag' tag.id %}" class="tags-text-popular-{{ tags_values.pop }} mb-auto p-3">{{ tag.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="members">
+    <h2 class="members-title">Best Members</h2>
+    <div class="members-list">
+      <ul style="list-style: none;">
+        {% for profile in profiles %}
+          <li><a href="{% url 'profile' profile.nickname %}">{{ profile.nickname }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
