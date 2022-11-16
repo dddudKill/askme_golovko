@@ -13,7 +13,7 @@
       <h1 class="mb-5">Rating: {{ tag.rating }}</h1>
     </div>
 
-    {% for question in questions.content %}
+    {% for question in paginated_items.content %}
       {% include './inc/question_item.html' %}
     {% endfor %}
 
