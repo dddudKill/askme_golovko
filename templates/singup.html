@@ -1,4 +1,4 @@
-{% extends "./inc/base.html" %}
+{% extends "./inc/base_noauth.html" %}
 
 {% load static %}
 
@@ -12,23 +12,23 @@
           <div class="col-12 mb-3 text-danger">Incorrect login or password!</div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputLogin" class="form-label">Login</label>
-            <input type="text" class="form-control" id="inputLogin" value="KittieCat">
+            <input type="text" class="form-control" id="inputLogin" value="KittieCat" required>
           </div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail" value="kittieCat0231@gmail.com">
+            <input type="email" class="form-control" id="inputEmail" value="kittieCat0231@gmail.com" required>
           </div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputNickname" class="form-label">Nickname</label>
-            <input type="text" class="form-control" id="inputNickname" value="KittieCat">
+            <input type="text" class="form-control" id="inputNickname" value="KittieCat" required>
           </div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword">
+            <input type="password" class="form-control" id="inputPassword" required>
           </div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputPasswordRepeat" class="form-label">Repeat Password</label>
-            <input type="password" class="form-control" id="inputPasswordRepeat">
+            <input type="password" class="form-control" id="inputPasswordRepeat" required>
           </div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputAvatar" class="form-label">Avatar</label>

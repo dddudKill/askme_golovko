@@ -1,4 +1,4 @@
-{% extends "./inc/base.html" %}
+{% extends "./inc/base_noauth.html" %}
 
 {% load static %}
 
@@ -12,7 +12,7 @@
           <div class="col-12 mb-3 text-danger">Incorrect login or password!</div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputLogin" class="form-label">Login</label>
-            <input type="text" class="form-control" id="inputLogin" value="KittieCat" required>
+            <input type="text" class="form-control" id="inputLogin" value="root" required>
           </div>
           <div class="col-12 d-flex flex-row justify-content-between">
             <label for="inputPassword" class="form-label">Password</label>
