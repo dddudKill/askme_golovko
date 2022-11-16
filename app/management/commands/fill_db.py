@@ -32,7 +32,7 @@ class Command(BaseCommand):
 
         users_temp = []
 
-        for i in range(1, ratio):
+        for i in range(0, ratio):
             user_data = {"username": faker.unique.user_name(), "mail": faker.email()}
             users_temp.append(
                 User(
@@ -42,10 +42,13 @@ class Command(BaseCommand):
                     password='password'
                 )
             )
+            print(f'User #{i} created')
             if i % BATCH_SIZE == 0:
                 User.objects.bulk_create(users_temp, BATCH_SIZE)
                 users_temp = []
         User.objects.bulk_create(users_temp)
+        print(f'{ratio} users created')
+        print('++++++++++++++++++++++++++')
 
     def fill_profiles(self):
         if Profile.objects.count() >= 2*RATIOS_DEFAULT['USERS']:
@@ -54,7 +57,7 @@ class Command(BaseCommand):
         users_data = User.objects.all()
         profiles_temp = []
 
-        for i in range(1, len(users_data)):
+        for i in range(0, len(users_data)):
             avatar_path = f'profile_pics/avatar{faker.random_int(1, 3)}.jpg'
             try:
                 users_data[i].profile.DoesNotExist()
@@ -77,7 +80,7 @@ class Command(BaseCommand):
             return
         tags_temp = []
 
-        for i in range(1, ratio):
+        for i in range(0, ratio):
             tag_data = {
                 "name": faker.unique.user_name()[:6],
                 "rating": faker.random_int(0, 60)
@@ -91,7 +94,10 @@ class Command(BaseCommand):
             if i % BATCH_SIZE == 0:
                 Tag.objects.bulk_create(tags_temp, BATCH_SIZE)
                 tags_temp = []
+            print(f'Tags #{i} created')
         Tag.objects.bulk_create(tags_temp)
+        print(f'{ratio} tags created')
+        print('++++++++++++++++++++++++++')
 
     def fill_questions(self, ratio):
         if Question.objects.count() >= 2*RATIOS_DEFAULT['QUESTIONS']:
@@ -101,7 +107,7 @@ class Command(BaseCommand):
         profiles_data = Profile.objects.all()
         tags_data = Tag.objects.all()
 
-        for i in range(1, ratio):
+        for i in range(0, ratio):
 
             question_data = {
                 "title": faker.unique.sentence(6),
@@ -120,7 +126,10 @@ class Command(BaseCommand):
             if i % BATCH_SIZE == 0:
                 Question.objects.bulk_create(questions_temp, BATCH_SIZE)
                 questions_temp = []
+            print(f'Question {i} created')
         Question.objects.bulk_create(questions_temp)
+        print(f'{ratio} questions created')
+        print('++++++++++++++++++++++++++')
 
         for question in Question.objects.all().filter(tags__exact=None):
             tags_spec = []
@@ -136,7 +145,7 @@ class Command(BaseCommand):
         questions_data = Question.objects.all()
         profiles_data = Profile.objects.all()
 
-        for i in range(1, ratio):
+        for i in range(0, ratio):
 
             answer_data = {
                 "question": questions_data[faker.random_int(0, len(questions_data) - 1)],
@@ -156,7 +165,10 @@ class Command(BaseCommand):
             if i % BATCH_SIZE == 0:
                 Answer.objects.bulk_create(answers_temp, BATCH_SIZE)
                 answers_temp = []
+                print(f'Answer #{i} created')
         Answer.objects.bulk_create(answers_temp)
+        print(f'{ratio} answers created')
+        print('++++++++++++++++++++++++++')
 
     def fill_likes(self, ratio):
         questions_data = Question.objects.all()
@@ -164,7 +176,9 @@ class Command(BaseCommand):
         questions_to_update = []
         answers_to_update = []
 
-        for i in range(1, ratio):
+        print('Filling likes....')
+
+        for i in range(0, ratio):
             value = -1 if faker.random_int(0, 1) == 0 else 1
             if faker.random_int(0, 1) == 0:
                 question = questions_data[faker.random_int(0, len(questions_data) - 1)]
@@ -179,9 +193,12 @@ class Command(BaseCommand):
                 questions_to_update = []
                 Answer.objects.bulk_update(answers_to_update, ['rating'], BATCH_SIZE)
                 answers_to_update = []
+                print(f'{BATCH_SIZE * 2} batched')
 
         Question.objects.bulk_update(questions_to_update, ['rating'])
         Answer.objects.bulk_update(answers_to_update, ['rating'])
+        print(f'{ratio} likes created')
+        print('++++++++++++++++++++++++++')
 
     def update_profiles_ratings(self):
         profiles_data = Profile.objects.all()

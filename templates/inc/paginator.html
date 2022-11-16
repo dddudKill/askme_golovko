@@ -1,39 +1,41 @@
-{% if questions.end_page > 1 %}
+{% if paginated_items.end_page > 1 %}
 <div class="row">
     <ul class="pagination mt-5">
-        {% if questions.content.has_previous %}
-          <li class="page-item"><a class="page-link" href="?page={{ questions.content.previous_page_number }}" tabindex="-1" aria-disabled="true"><</a></li>
-          {% if 1 < questions.min_page  %}
-            <li class="page-item"><a class="page-link" href="?page={{ 1 }}">{{ 1 }}</a></li>
-          {% endif %}
-          {% if questions.content.number > 4 %}
-            <li class="page-item disabled"><a class="page-link disabled" href="#">...</a></li>
-          {% endif %}
-        {% endif %}
+      {% if paginated_items.content.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ paginated_items.content.previous_page_number }}" tabindex="-1" aria-disabled="true"><</a></li>
+      {% endif %}
+      {% if 1 < paginated_items.scope_min_page  %}
+        <li class="page-item"><a class="page-link" href="?page={{ 1 }}">{{ 1 }}</a></li>
+      {% endif %}
+      {% if paginated_items.content.number|add:"-3" > 1 %}
+        <li class="page-item disabled"><a class="page-link disabled" href="#">...</a></li>
+      {% endif %}
 
-        {% for i in questions.content.paginator.page_range %}
-          {% if i >= questions.min_page and i < questions.content.number %}
-            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-          {% endif %}
-        {% endfor %}
 
-        <li class="page-item active"><a class="page-link" href="?page={{ questions.content.number }}">{{ questions.content.number }}</a></li>
-
-      {% for i in questions.content.paginator.page_range %}
-          {% if i > questions.content.number and i <= questions.max_page %}
+      {% for i in paginated_items.content.paginator.page_range %}
+        {% if i >= paginated_items.scope_min_page and i < paginated_items.content.number %}
           <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-          {% endif %}
-        {% endfor %}
-
-        {% if questions.content.has_next %}
-          {% if questions.content.number < questions.end_page %}
-            <li class="page-item disabled"><a class="page-link disabled" href="#">...</a></li>
-          {% endif %}
-          {% if questions.content.number < questions.max_page  %}
-            <li class="page-item"><a class="page-link" href="?page={{ questions.end_page }}">{{ questions.end_page }}</a></li>
-          {% endif %}
-          <li class="page-item"><a class="page-link" href="?page={{ questions.content.next_page_number }}" tabindex="-1" aria-disabled="true">></a></li>
         {% endif %}
+      {% endfor %}
+
+      <li class="page-item active"><a class="page-link" href="?page={{ paginated_items.content.number }}">{{ paginated_items.content.number }}</a></li>
+
+      {% for i in paginated_items.content.paginator.page_range %}
+        {% if i > paginated_items.content.number and i <= paginated_items.scope_max_page %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+
+      {% if paginated_items.content.number|add:"3" < paginated_items.end_page %}
+        <li class="page-item disabled"><a class="page-link disabled" href="#">...</a></li>
+      {% endif %}
+      {% if paginated_items.scope_max_page < paginated_items.end_page  %}
+        <li class="page-item"><a class="page-link" href="?page={{ paginated_items.end_page }}">{{ paginated_items.end_page }}</a></li>
+      {% endif %}
+      {% if paginated_items.content.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ paginated_items.content.next_page_number }}" tabindex="-1" aria-disabled="true">></a></li>
+      {% endif %}
+
     </ul>
 </div>
 {% endif %}

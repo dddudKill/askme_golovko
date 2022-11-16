@@ -7,15 +7,15 @@
   <div class="col-9">
     {% include './inc/question_item.html' %}
     <div class="breakline"></div>
-    {% for answer in answers %}
+    {% for answer in paginated_items.content %}
       {% include './inc/answer_item.html' %}
     {% endfor %}
-      <div class="breakline"></div>
+    {% include './inc/paginator.html' %}
+    <div class="breakline"></div>
     <div class="reply">
       <div class="row">
         <div class="mb-3 d-flex flex-row justify-content-between">
           <textarea class="form-control ms-5" id="exampleFormControlTextarea1" placeholder="Input your answer here..." rows="8"></textarea>
-
         </div>
         <div class="mb-3 d-flex flex-row justify-content-between" style="width: 175px;">
           <label class="form-label"></label>
@@ -23,7 +23,6 @@
         </div>
       </div>
     </div>
-  {% include './inc/paginator.html' %}
   </div>
 
   {% include './inc/sidebar.html' %}

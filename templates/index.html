@@ -11,7 +11,7 @@
       <a href="{% url 'hot' %}" class="text-decoration-underline ms-5 mb-4" style="font-size: 1.2rem">Hot Questions</a>
     </div>
 
-    {% for question in questions.content %}
+    {% for question in paginated_items.content %}
       {% include './inc/question_item.html' %}
     {% endfor %}
 
