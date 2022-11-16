@@ -2,33 +2,35 @@
 
 <div class="question">
       <div class="row">
-        <div class="col-2 align-content-center">
+        <div class="col-12 col-lg-2 align-content-center">
           <div class="avatar">
-            <img src="{% static "img/avatar1.jpg" %}" alt=""/>
+            <a href="{% url 'profile' question.author.nickname %}">
+              <img src="{{ question.author.avatar.url }}" alt="{{ question.author.nickname }}"/>
+            </a>
           </div>
         </div>
-        <div class="col-9">
-          <h2 class="question-title">
+        <div class="col-10 col-lg-9 ps-4">
+          <h2 class="question-title text-start">
             <a href="{% url 'question' question_id=question.id %}">{{ question.title}}</a>
           </h2>
-          <p class="mb-5">
+          <p class="mb-5 block-with-text text-start text-monospace">
             {{ question.text }}
           </p>
           <div class="row">
             <div class="col-4">
-              <a style="text-decoration:underline" href="{% url 'question' question_id=question.id %}">Answers ({{ question.answers_number }})</a>
+              <a style="text-decoration:underline" href="{% url 'question' question_id=question.id %}">Answers ({{ question.answers.count }})</a>
             </div>
             <div class="col-8">
               <p>
                 Tags:
-                {% for tag in question.tags %}
-                  <a style="text-decoration:underline" href="{% url 'tag' 2 %}">{{ tag }}</a>
+                {% for tag in question.tags.all %}
+                  <a style="text-decoration:underline" href="{% url 'tag' tag.id %}">{{ tag.name }}</a>
                 {% endfor %}
               </p>
             </div>
           </div>
         </div>
-        <div class="col-1 rating text-center pt-3">
+        <div class="col-2 col-lg-1 rating text-center pt-3">
           <button class="btn btn-success border border-white" type="submit">+</button>
           <p>{{ question.rating }}</p>
           <button class="btn btn-danger border border-white" type="submit">-</button>
