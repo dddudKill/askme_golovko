@@ -1,9 +1,5 @@
 "# askme_golovko" 
 
-Создание виртуального окружения:
-  ./venv/Scripts/Activate.ps1   -- PowerShell
-  ./venv/Scripts/activate       -- Cmd
+Database fill:
 
-Запуск локального сервера:
-  python ./manage.py runserver
-  
+python manage.py fill_db <value>  (default=100)  
